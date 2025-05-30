@@ -95,7 +95,3 @@ jobs:
         with:
           name: windows-sdk
           path: ./build/shotcut-win64-sdk-*.txz
-
-            echo Uploading "$file" to S3
-            aws s3 cp --acl public-read "$file" s3://builds.us.meltytech/shotcut/ --no-progress
-          done
