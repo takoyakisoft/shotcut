@@ -96,16 +96,6 @@ jobs:
           name: windows-sdk
           path: ./build/shotcut-win64-sdk-*.txz
 
-      - name: Upload packages to S3
-        if: ${{ github.repository_owner == 'mltframework' }}
-        shell: msys2 {0}
-        run: |
-          echo Installing awscli
-          pip install awscli
-          export AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY }}
-          export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_KEY }}
-          export AWS_DEFAULT_REGION=us-east-1
-          for file in build/*.txz; do
             echo Uploading "$file" to S3
             aws s3 cp --acl public-read "$file" s3://builds.us.meltytech/shotcut/ --no-progress
           done
