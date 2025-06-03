@@ -52,6 +52,8 @@ jobs:
             mingw-w64-x86_64-x264
             mingw-w64-x86_64-x265
             mingw-w64-x86_64-zimg
+            mingw-w64-x86_64-swig
+            mingw-w64-x86_64-python
 
       - uses: actions/checkout@v4
 
