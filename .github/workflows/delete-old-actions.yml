@@ -1,3 +1,5 @@
+name: delete-old-actions
+
 on:
   schedule:
     - cron: '0 0 * * *'
